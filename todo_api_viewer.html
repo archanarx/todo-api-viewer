@@ -34,5 +34,52 @@
     </table>
 </div>
 
+<script>
+    const apiUrl = "https://jsonplaceholder.typicode.com/todos/";
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            let tableBody = document.getElementById("todoTableBody");
+
+            data.forEach(todo => {
+                let row = `
+                    <tr>
+                        <td>${todo.id}</td>
+                        <td>${todo.title}</td>
+                        <td>${todo.completed ? "Yes" : "No"}</td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+
+            // Initial count
+            document.getElementById("countDisplay").innerText =
+                `Total To-Dos: ${data.length}`;
+        })
+        .catch(error => console.log("Error:", error));
+
+    function searchTitle() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let rows = document.querySelectorAll("#todoTableBody tr");
+        let visibleCount = 0;
+
+        rows.forEach(row => {
+            let title = row.children[1].innerText.toLowerCase();
+
+            if (title.includes(input)) {
+                row.style.display = "";
+                visibleCount++;
+            } else {
+                row.style.display = "none";
+            }
+        });
+
+        document.getElementById("countDisplay").innerText =
+            `Total To-Dos: ${visibleCount}`;
+    }
+</script>
+
+
 </body>
 </html>
