@@ -1,4 +1,4 @@
-# 📝 To-Do List Viewer
+# To-Do List Viewer
 
 This is a simple beginner project I built while learning JavaScript and working with APIs.
 It fetches a list of to-do items from a public API and displays them in a clean table using Bootstrap.
@@ -6,7 +6,7 @@ It fetches a list of to-do items from a public API and displays them in a clean 
 We can search tasks by their title and see how many to-dos are currently visible.
 
 ---
-✨ What this project does :
+What this project does :
 
 * Loads to-do data from a public API using JavaScript fetch
 
@@ -17,7 +17,7 @@ We can search tasks by their title and see how many to-dos are currently visible
 * Updates the count based on search results
 
 ---
-🛠️ Built With :
+Built With :
 
 * HTML
 
@@ -25,7 +25,7 @@ We can search tasks by their title and see how many to-dos are currently visible
 
 * Bootstrap 4
 ---
-🌐 API Used :
+ API Used :
 
 The project uses the following free API,
 
